@@ -39,11 +39,20 @@ function saveTasks(){
 //As the page loads , read the tasks from local storage , grab them and store in array and run the loop through tasks array, read and call renderTask for each task so it can render the whole array
 function renderTask(task){
     const li = document.createElement("li");
+    if(task.isCompleted) li.classList.add("completed");
     li.setAttribute("data-id", task.id);
+
     li.innerHTML = `
     <span class= "task-item">${task.text}</span>
     <button class="delete-btn">delete</button>
     `;
+    li.addEventListener("click", (e) => {
+        if(e.target.tagName === "BUTTON") return;
+        task.isCompleted = !task.isCompleted;
+        li.classList.toggle("completed");
+        saveTasks();
+    });
+
     todoList.appendChild(li);
 }
 });
