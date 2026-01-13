@@ -1,9 +1,15 @@
-//grabbing the elements
+//Wrapped the whole code so it only works once the DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+
+    //grabbing the elements
 const todoInput = document.getElementById("todo-input");
 const addTaskBtn = document.getElementById("add-task-btn");
 const todoList = document.getElementById("todo-list");
 
-let tasks = [];
+//Need to get the tasks from the array
+let tasks = JSON.parse(localStorage.getItem("task")) || []; //parse is used so the task we provideed in string format can be get into its OG format i.e. array of an object
+
+tasks.forEach(task => renderTask(task) ); //using this each task in array could be displayed
 
 addTaskBtn.addEventListener("click",  function (){
 
@@ -27,5 +33,11 @@ addTaskBtn.addEventListener("click",  function (){
 
 //storing the task in local storage
 function saveTasks(){
-    localStorage.setItem("task", JSON.stringify(tasks));
+    localStorage.setItem("task", JSON.stringify(tasks)); //stringify is used as setItem method takes up the value in string format only so need to convert it
 }
+
+//As the page loads , read the tasks from local storage , grab them and store in array and run the loop through tasks array, read and call renderTask for each task so it can render the whole array
+function renderTask(task){
+    console.log(task);
+}
+});
