@@ -38,6 +38,12 @@ function saveTasks(){
 
 //As the page loads , read the tasks from local storage , grab them and store in array and run the loop through tasks array, read and call renderTask for each task so it can render the whole array
 function renderTask(task){
-    console.log(task);
+    const li = document.createElement("li");
+    li.setAttribute("data-id", task.id);
+    li.innerHTML = `
+    <span class= "task-item">${task.text}</span>
+    <button class="delete-btn">delete</button>
+    `;
+    todoList.appendChild(li);
 }
 });

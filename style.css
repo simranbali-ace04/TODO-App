@@ -30,7 +30,7 @@ h1{
     margin-bottom: 20px;
 }
 
-button{
+#add-task-btn{
     background-color: #0c42b7;
     padding: 7px 10px;
     border: solid 1px rgba(255, 255, 255, 0.285);
@@ -58,17 +58,26 @@ ul{
     padding: 0%;
     margin: 0%;
 }
-#todo-item{
+li{
     background-color: transparent;
     border: solid rgba(255, 255, 255, 0.237) 1px ;
     color: white;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    
 }
-#item-btn{
+
+.delete-btn{
     background-color: rgba(255, 0, 0, 0.59);
-    margin-left: 60px;
+    padding: 7px 10px;
+    border: solid 1px rgba(255, 255, 255, 0.285);
+    color: white;
+    
 }
-#item-btn:hover{
+.delete-btn:hover{
     background-color: red;
 }
 
