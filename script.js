@@ -18,8 +18,14 @@ addTaskBtn.addEventListener("click",  function (){
     };
 
     tasks.push(newTask);
+    saveTasks();
     todoInput.value = "" ; //after pushing , the input value will be cleared
 
     console.log(tasks); //To check if the task is added in array or not 
     
 });
+
+//storing the task in local storage
+function saveTasks(){
+    localStorage.setItem("task", JSON.stringify(tasks));
+}
