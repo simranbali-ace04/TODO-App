@@ -54,8 +54,11 @@ function renderTask(task){
     });
 
     li.querySelector("button").addEventListener("click", (e) => {
-        
-    })
+        e.stopPropagation(); //prevents toggle from firing
+        tasks = tasks.filter((t) => t.id !== task.id); //Drop the tasks which 
+        li.remove();
+        saveTasks();
+    });
 
     todoList.appendChild(li);
 }
