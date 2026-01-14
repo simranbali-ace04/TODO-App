@@ -53,6 +53,10 @@ function renderTask(task){
         saveTasks();
     });
 
+    li.querySelector("button").addEventListener("click", (e) => {
+        
+    })
+
     todoList.appendChild(li);
 }
 });
