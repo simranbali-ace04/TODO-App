@@ -5,6 +5,12 @@ A clean and minimal **Todo List application** built using **HTML, CSS, and Vanil
 This project focuses on mastering core frontend concepts without using any frameworks.
 
 ---
+## 🌐 Live Demo  
+
+Experience the project live here:  
+👉 **[Open App](https://simranb-todolist-js.vercel.app/)**
+
+---
 
 ## ✨ Features
 
